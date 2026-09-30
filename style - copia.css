@@ -1,0 +1,1267 @@
+
+/* =====================================================
+   DJ eZe — PROFESSIONAL DESIGN
+   Sonido • Música • Iluminación
+===================================================== */
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+    --bg: #05070c;
+    --bg-secondary: #080c14;
+    --card: #0c111b;
+    --card-hover: #101827;
+
+    --blue: #00a8ff;
+    --blue-light: #00d9ff;
+    --blue-dark: #006eff;
+
+    --text: #ffffff;
+    --text-secondary: #a8b1c0;
+
+    --border: rgba(0, 168, 255, 0.18);
+
+    --shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   BARRA DE NAVEGACIÓN
+===================================================== */
+
+header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(5, 7, 12, 0.82);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.navbar {
+    width: min(1200px, 92%);
+
+    height: 78px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 25px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--blue-light);
+
+    text-shadow:
+        0 0 8px rgba(0, 217, 255, 0.8),
+        0 0 25px rgba(0, 168, 255, 0.5);
+}
+
+
+/* MENÚ */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: var(--text-secondary);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--blue-light);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--blue-light);
+
+    box-shadow:
+        0 0 8px var(--blue);
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 140px 20px 100px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(0, 140, 255, 0.15),
+            transparent 35%
+        );
+}
+
+
+/* Líneas decorativas */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 168, 255, 0.08);
+
+    box-shadow:
+        0 0 100px rgba(0, 168, 255, 0.08);
+
+    animation: rotateGlow 15s linear infinite;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 168, 255, 0.08);
+
+    filter: blur(80px);
+
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+}
+
+
+/* TEXTO SUPERIOR */
+
+.subtitle {
+    color: var(--blue-light);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+
+/* LOGO GRANDE */
+
+.hero h1 {
+    font-size: clamp(75px, 13vw, 155px);
+
+    line-height: 0.9;
+
+    font-weight: 950;
+
+    letter-spacing: -7px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: var(--blue-light);
+
+    text-shadow:
+        0 0 8px var(--blue),
+        0 0 25px var(--blue),
+        0 0 60px rgba(0, 168, 255, 0.7);
+}
+
+
+/* FRASE */
+
+.hero h2 {
+    font-size: clamp(24px, 4vw, 38px);
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+
+/* DESCRIPCIÓN */
+
+.hero p:not(.subtitle) {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: var(--text-secondary);
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 170px;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--blue-dark)
+        );
+
+    color: white;
+
+    border: 1px solid var(--blue);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 25px rgba(0, 110, 255, 0.25);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 35px rgba(0, 168, 255, 0.45);
+}
+
+.btn-secondary {
+    background: transparent;
+
+    border-color:
+        rgba(0, 217, 255, 0.5);
+}
+
+.btn-secondary:hover {
+    background:
+        rgba(0, 168, 255, 0.1);
+}
+
+
+/* =====================================================
+   SECCIONES
+===================================================== */
+
+.section {
+    width: min(1150px, 92%);
+
+    margin: auto;
+
+    padding: 115px 0;
+}
+
+
+/* TITULOS */
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.section-title p {
+    color: var(--blue-light);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    font-size: clamp(32px, 5vw, 48px);
+
+    line-height: 1.1;
+
+    font-weight: 850;
+}
+
+
+/* =====================================================
+   SERVICIOS
+===================================================== */
+
+.services-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.service-card {
+    position: relative;
+
+    padding: 32px 24px;
+
+    min-height: 220px;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--card),
+            #080c13
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(0, 217, 255, 0.6);
+
+    box-shadow:
+        0 15px 45px rgba(0, 168, 255, 0.12);
+}
+
+.service-icon {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(0, 217, 255, 0.5)
+        );
+}
+
+.service-card h3 {
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   PAQUETES
+===================================================== */
+
+.packages-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.package-card {
+    position: relative;
+
+    padding: 40px 30px;
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.package-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(0, 168, 255, 0.6);
+}
+
+.package-card h3 {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+.package-description {
+    min-height: 55px;
+
+    color: var(--text-secondary);
+}
+
+.price {
+    margin: 25px 0;
+
+    color: var(--blue-light);
+
+    font-size: 24px;
+
+    font-weight: 800;
+}
+
+.package-card.featured {
+    border:
+        1px solid var(--blue);
+
+    box-shadow:
+        0 0 35px rgba(0, 168, 255, 0.1);
+}
+
+.popular {
+    position: absolute;
+
+    top: -12px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 5px 14px;
+
+    border-radius: 20px;
+
+    background: var(--blue);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   EQUIPOS
+===================================================== */
+
+.equipment-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.equipment-card {
+    display: flex;
+
+    min-height: 190px;
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.equipment-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(0, 168, 255, 0.55);
+}
+
+
+/* Lugar para futura foto */
+
+.equipment-image {
+    width: 190px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 168, 255, 0.15),
+            transparent 65%
+        );
+
+    border-right:
+        1px solid var(--border);
+
+    color: var(--blue-light);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* INFORMACIÓN */
+
+.equipment-info {
+    padding: 28px;
+}
+
+.equipment-info h3 {
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.equipment-info p {
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   GALERÍA — SIN FOTOS POR AHORA
+===================================================== */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.gallery-item {
+    height: 200px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #080d17,
+            #0d1624
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 13px;
+
+    color: var(--blue-light);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.gallery-item::before {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border:
+        1px solid rgba(0, 168, 255, 0.15);
+
+    border-radius: 50%;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+
+    border-color:
+        rgba(0, 217, 255, 0.5);
+
+    box-shadow:
+        0 10px 35px rgba(0, 168, 255, 0.12);
+}
+
+
+/* =====================================================
+   SOBRE DJ eZe
+===================================================== */
+
+.about-section {
+    width: min(950px, 92%);
+}
+
+.about-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.about-logo {
+    min-width: 270px;
+
+    font-size: 58px;
+
+    font-weight: 950;
+
+    text-align: center;
+}
+
+.about-logo span {
+    color: var(--blue-light);
+
+    text-shadow:
+        0 0 20px var(--blue);
+}
+
+.about-text {
+    color: var(--text-secondary);
+
+    font-size: 15px;
+}
+
+.about-text p {
+    margin-bottom: 16px;
+}
+
+
+/* =====================================================
+   CONTACTO
+===================================================== */
+
+.contact-container {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 70px;
+}
+
+.contact-info h3 {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    color: var(--text-secondary);
+
+    margin-bottom: 30px;
+}
+
+.contact-list p {
+    margin-bottom: 17px;
+
+    color: var(--text-secondary);
+}
+
+.contact-list strong {
+    color: white;
+}
+
+.contact-list a {
+    color: var(--blue-light);
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.contact-list a:hover {
+    text-shadow:
+        0 0 10px var(--blue);
+}
+
+
+/* =====================================================
+   FORMULARIO
+===================================================== */
+
+.contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    padding: 30px;
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow);
+}
+
+.contact-form label {
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border:
+        1px solid rgba(0, 168, 255, 0.18);
+
+    border-radius: 7px;
+
+    background: #070b12;
+
+    color: white;
+
+    font-family: inherit;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #657080;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 15px rgba(0, 168, 255, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .btn {
+    margin-top: 15px;
+
+    border: none;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    margin-top: 50px;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: #03050a;
+
+    border-top:
+        1px solid var(--border);
+}
+
+.footer-logo {
+    font-size: 27px;
+
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: var(--blue-light);
+
+    text-shadow:
+        0 0 15px var(--blue);
+}
+
+footer p {
+    color: var(--text-secondary);
+
+    font-size: 13px;
+}
+
+.copyright {
+    margin-top: 18px;
+}
+
+
+/* =====================================================
+   ANIMACIONES
+===================================================== */
+
+@keyframes glow {
+
+    from {
+        transform: scale(0.9);
+
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(1.15);
+
+        opacity: 1;
+    }
+}
+
+@keyframes rotateGlow {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .services-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .equipment-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .about-content {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 35px;
+    }
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 18px 0;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 14px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+
+    .hero {
+        padding-top: 180px;
+    }
+
+    .hero h1 {
+        font-size: 76px;
+
+        letter-spacing: -4px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .hero p:not(.subtitle) {
+        font-size: 15px;
+    }
+
+    .subtitle {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+
+        max-width: 290px;
+    }
+
+
+    .section {
+        padding: 85px 0;
+    }
+
+
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .packages-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .equipment-container {
+        grid-template-columns: 1fr;
+    }
+
+    .equipment-card {
+        flex-direction: column;
+    }
+
+    .equipment-image {
+        width: 100%;
+
+        height: 150px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--border);
+    }
+
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+
+    .gallery-item {
+        height: 180px;
+    }
+
+
+    .about-logo {
+        min-width: 0;
+
+        font-size: 45px;
+    }
+
+
+    .contact-form {
+        padding: 22px;
+    }
+
+}
+
+
+/* =========================================
+   BOTÓN FLOTANTE WHATSAPP
+========================================= */
+
+.whatsapp-float {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+    color: white;
+
+    border-radius: 50%;
+    text-decoration: none;
+
+    font-size: 28px;
+
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+
+    z-index: 9999;
+
+    transition: 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.8);
+}
+
+@media (max-width: 600px) {
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        right: 18px;
+        bottom: 18px;
+        font-size: 25px;
+    }
+}
+
+/* =========================================
+   MENÚ CELULAR
+========================================= */
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        flex-direction: column;
+
+        padding: 15px 0;
+
+        background: rgba(5, 5, 15, 0.98);
+        border-top: 1px solid rgba(0, 170, 255, 0.3);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px;
+    }
+}
+
